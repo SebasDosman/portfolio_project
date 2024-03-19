@@ -1,0 +1,36 @@
+---
+import EducationItem from "./EducationItem.astro";
+const EDUCATION = [
+  {
+    date: "July 2021 - Present",
+    title: "Software engineering",
+    company: "Universidad de San Buenaventura Cali",
+    description:
+      "I am currently studying systems engineering in sixth semester, so far I have acquired essential knowledge of good programming practices, object-oriented programming, functional programming, data structure, architectural patterns such as MVC, MVT, front-end and back-end development, agile methodologies and others.",
+  },
+  {
+    date: "October 2020 — November 2021",
+    title: "Software development training program",
+    company: "Parquesoft T.I.",
+    description:
+      "It was a bootcamp in which for a year I was in constant learning and practice, I learned the basics about web development in Html, Css, JavaScript, plus knowledge in other programming languages such as C, C++, C #, Java, PHP, Python and relational databases SQL and non-relational with MongoDB. Among the skills I acquired are soft skills such as teamwork and leadership.I graduated in the year 2021 with a certificate with ISO job competencies endorsed by EvalMAX together with Parquesoft T.I.",
+  },
+  {
+    date: "August 2019 — July 2021",
+    title: "Technical bachelor,",
+    company: "SENA (Servicio Nacional de Aprendizaje)",
+    description:
+      "It was two years in which I built knowledge and foundations on programming and software development, gaining experience in traditional methodologies and object-oriented programming. During these two years I was in constant practice to conclude with a productive and entrepreneurial project called That's Study, which consisted of a desktop application developed in Java with a MySQL database raised with an Apache server through XAMPP.",
+  },
+];
+---
+
+<ol class="relative mt-16">
+  {
+    EDUCATION.map((educationItem) => (
+      <li class="">
+        <EducationItem {...educationItem} />
+      </li>
+    ))
+  }
+</ol>

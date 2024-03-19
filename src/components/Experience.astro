@@ -1,0 +1,23 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCE = [
+  {
+    date: "February 2022 — May 2022",
+    title: "Software developer",
+    company: "AntPack",
+    description:
+      "During these three months, I was in practices, getting to handle design and layout in HTML5 and  CSS3 and even to touch React.js code, in addition, I spent some time supporting the company in web development issues with Shopify content management system.",
+    link: "https://antpack.co",
+  },
+];
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>

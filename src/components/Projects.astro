@@ -1,0 +1,153 @@
+---
+import Angular from "./icons/Angular.astro"
+import Express from "./icons/ExpressJS.astro"
+import Bootstrap from "./icons/Bootstrap.astro"
+import GitHub from "./icons/GitHub.astro"
+import Tailwind from "./icons/Tailwind.astro"
+import Mongo from "./icons/Mongo.astro"
+import Node from "./icons/NodeJS.astro"
+import Nest from "./icons/NestJS.astro"
+import Link from "./icons/Link.astro"
+import LinkButton from "./LinkButton.astro"
+import Postgres from "./icons/PostgreSQL.astro"
+import Spring from "./icons/Spring.astro"
+
+const TAGS = {
+  ANGULAR: {
+    name: "Angular",
+    class: "bg-[#DE002D] text-white",
+    icon: Angular,
+  },
+  TAILWIND: {
+    name: "Tailwind",
+    class: "bg-[#3EBFF8] text-white",
+    icon: Tailwind,
+  },
+  BOOTSTRAP: {
+    name: "Bootstrap",
+    class: "bg-[#7E13F8] text-white",
+    icon: Bootstrap,
+  },
+  SPRING: {
+    name: "Spring",
+    class: "bg-[#65B843] text-white",
+    icon: Spring,
+  },
+  NEST: {
+    name: "NestJS",
+    class: "bg-[#E0234E] text-white",
+    icon: Nest,
+  },
+  NODE: {
+    name: "NodeJS",
+    class: "bg-[#5DAC46] text-white",
+    icon: Node,
+  },
+  EXPRESS: {
+    name: "ExpressJS",
+    class: "bg-black text-white",
+    icon: Express,
+  },
+  MONGO: {
+    name: "Mongo",
+    class: "bg-[#01EC64] text-white",
+    icon: Mongo,
+  },
+  POSTGRES: {
+    name: "PostgreSQL",
+    class: "bg-[#336791] text-white",
+    icon: Postgres,
+  },
+}
+const PROJECTS = [
+  {
+    title: "TuDefensa",
+    description:
+      "Web application for the automatic management of legal services such as guardianships, rights of petition, among others. Built together with my work group, with technologies such as Angular for the design and architecture of the front-end and Spring Boot for the architecture of the back-end and its connection with the PostgreSQL database, using many benefits offered by Spring such as Spring Security and Spring Data JPA",
+    link: "https://tudefensa.com.co/",
+    github: "",
+    image: "/projects/tudefensa.webp",
+    tags: [TAGS.ANGULAR, TAGS.TAILWIND, TAGS.SPRING, TAGS.POSTGRES],
+  },
+  {
+    title: "Netflix Clone",
+    description:
+      "Netflix clone, a streaming platform, built with Nest.js on the back-end, Angular on the front-end and MongoDB database. It replicates the core features and functionality of the popular streaming service, allowing users to browse and watch their favorite movies and TV shows.",
+    link: "",
+    github: "https://github.com/SebasDosman/netflix_app",
+    image: "/projects/netflix.webp",
+    tags: [TAGS.ANGULAR, TAGS.BOOTSTRAP, TAGS.NEST, TAGS.MONGO],
+  },
+  {
+    title: "AirlinesApp",
+    description:
+      "AirlinesApp, skillfully crafted using Spring Boot for the back-end and Angular for the front-end, seamlessly integrates with a PostgreSQL database. AirlinesApp empowers you with versatile CRUD operations for planes, flights, routes, users, and more.",
+    link: "",
+    github: "https://github.com/SebasDosman/airlines_app",
+    image: "/projects/airlinesapp.webp",
+    tags: [TAGS.ANGULAR, TAGS.BOOTSTRAP, TAGS.SPRING, TAGS.POSTGRES],
+  },
+  {
+    title: "ArtAnime",
+    description:
+      "My contribution was the redesign of the web application, made by colleagues from my university. This application was made with technologies such as Angular for the front-end architecture and Node.js for the back-end architecture and connection with the non-relational database MongoDB.",
+    link: "https://artanime.netlify.app/",
+    github: "",
+    image: "/projects/artanime.webp",
+    tags: [TAGS.ANGULAR, TAGS.NODE, TAGS.EXPRESS, TAGS.MONGO],
+  },
+]
+---
+
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+  <div class="w-full md:w-1/2">
+    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+      <img alt="" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+    </div>
+  </div>
+
+  <div class="w-full md:w-1/2 md:max-w-lg">
+    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+      {title}
+    </h3>
+    <div class="flex flex-wrap mt-2">
+      <ul class="flex flex-row mb-2 gap-x-2">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+              >
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
+      <footer class="flex items-end justify-start mt-4 gap-x-4">
+          {github && (
+            <LinkButton href={github}>
+              <GitHub class="size-6" />
+              Code
+            </LinkButton>
+          )}
+          {link && (
+            <LinkButton href={link}>
+              <Link class="size-4" />
+              Preview
+            </LinkButton>
+          )}
+        </footer>
+    </div>
+  </div>
+</article>
+    ))
+  }
+</div>
+
+
+
