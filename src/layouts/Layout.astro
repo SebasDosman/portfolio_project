@@ -53,6 +53,20 @@ const { description, title } = Astro.props
         overscroll-behavior: none;
       }
 
+      ::-webkit-scrollbar {
+        width: 14px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #424242;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #686868;
+        border-radius: 20px;
+        border: 3px solid #424242 ;
+      }
+
       @media (prefers-reduced-motion: reduce) {
         html {
           scroll-behavior: auto;
